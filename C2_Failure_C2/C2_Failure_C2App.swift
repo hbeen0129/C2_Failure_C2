@@ -12,6 +12,7 @@ struct C2_Failure_C2App: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
+//                .modelContext(FailureRecord.self)
         }
     }
 }
