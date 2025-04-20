@@ -39,6 +39,8 @@ enum ButtonType: String, CaseIterable {
 struct ContentView: View {
     // TempFailure 객체 생성 (데이터를 관리하기 위해 사용하는 코드)
     @StateObject var tempFailure = TempFailure()
+    
+    
     var body: some View {
         
         // 네비게이션 스택으로 전체 네비게이션 뷰로 넘길 버튼 생성을 위한 틀 잡기

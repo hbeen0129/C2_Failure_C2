@@ -6,13 +6,66 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct ListDetailView: View {
+    var failureRecord: FailureRecord
+    
+    @State private var isFlipped = false
+    @State private var showDeleteAlert = false
+    
     var body: some View {
-        Text("리스트 디테일 뷰")
+        VStack {
+            if !isFlipped {
+                //앞면
+                Text("제목: \(failureRecord.title)")
+                Text("내용: \(failureRecord.content)")
+                Text("카테고리: \(failureRecord.category)")
+                
+            } else {
+                // 뒷면
+                Text("음료: \(failureRecord.drink)")
+                Text("명언: \(failureRecord.quote)")
+            }
+            
+//            // 회전 효과
+//                .rotation3DEffect(
+//                    .degrees(isFlipped ? 180 : 0),
+//                    axis: (x: 0, y: 1, z: 0)
+//                )
+//                .onTapGesture {
+//                    withAnimation {
+//                        isFlipped.toggle()
+//                    }
+//                }
+            
+            // 수정, 삭제 버튼
+            HStack {
+                Button("수정") {
+                    // 수정 처리
+                }
+                .padding()
+                Button("삭제") {
+                    showDeleteAlert = true
+                }
+                .padding()
+                .foregroundStyle(.red)
+//                .alert("정말 삭제하시겠습니까?", isPresented: $showDeleteAlert) {
+//                    Button("삭제", role: .destructive) {
+//                        context.delete(failureRecord)
+//                        try? context.save()
+//                        dismiss()
+//                    }
+//                }
+                
+            }
+            
+        }
+        
     }
 }
 
-#Preview {
-    ListDetailView()
-}
+//#Preview {
+//    ListDetailView()
+//    
+//}

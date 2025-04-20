@@ -82,6 +82,7 @@ struct RecordView: View {
                 }
                 
             }
+            .safeAreaPadding(.vertical, 20)
             .safeAreaPadding(.horizontal, 20)
         }
     }

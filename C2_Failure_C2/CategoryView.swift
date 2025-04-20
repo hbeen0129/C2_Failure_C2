@@ -31,7 +31,7 @@ struct CategoryView: View {
                 Text("오늘의 실패 \n 한 조각을 선택하세요")
                     .font(.system(size: 30, weight: .bold, design: .default))
                     .multilineTextAlignment(.center) // 가운데 정렬
-                    .padding(.top, 65)
+                    .padding(.top, 40)
                 
                 Spacer()
                 
@@ -94,6 +94,7 @@ struct CategoryView: View {
                 Spacer()
                 
             }
+            .safeAreaPadding(.vertical, 20)
             .safeAreaPadding(.horizontal, 20)
             
         }
