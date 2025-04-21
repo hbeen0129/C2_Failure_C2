@@ -28,16 +28,6 @@ struct ListDetailView: View {
                 Text("명언: \(failureRecord.quote)")
             }
             
-//            // 회전 효과
-//                .rotation3DEffect(
-//                    .degrees(isFlipped ? 180 : 0),
-//                    axis: (x: 0, y: 1, z: 0)
-//                )
-//                .onTapGesture {
-//                    withAnimation {
-//                        isFlipped.toggle()
-//                    }
-//                }
             
             // 수정, 삭제 버튼
             HStack {
@@ -66,6 +56,6 @@ struct ListDetailView: View {
 }
 
 //#Preview {
-//    ListDetailView()
+//    ListDetailView(failureRecord: FailureRecord)
 //    
 //}

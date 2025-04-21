@@ -43,7 +43,7 @@ struct ContentView: View {
     
     var body: some View {
         
-        // 네비게이션 스택으로 전체 네비게이션 뷰로 넘길 버튼 생성을 위한 틀 잡기
+        // 네비게이션 스택으로 전체 네비게이션 뷰로 넘길 버튼 생성을 위한 틀 잡기(앱의 첫 뷰)
         NavigationStack {
             
             // 전체 세로로 쌓기 spacing 뷰 내부 간격
