@@ -25,4 +25,5 @@ class TempFailure: ObservableObject {
     @Published var category: String = ""
     @Published var drink: String = ""
     @Published var quote: String = ""
+    @Published var author: String = ""
 }

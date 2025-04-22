@@ -22,7 +22,7 @@ struct RecordView: View {
                 VStack {
                     
                     // 날짜 데이터
-                    Text(formattedDate(date: tempFailure.date))
+                    Text(formattedDate(tempFailure.date))
                         .foregroundStyle(Color.black)
                         .font(.title3)
                         .fontWeight(.semibold)
@@ -73,7 +73,7 @@ struct RecordView: View {
                     UIApplication.shared.endEditing()
                 }
                 .toolbar {
-                    NavigationLink(destination: CategoryView()) {
+                    NavigationLink(destination: CategoryView(tempFailure: tempFailure)) { // 카테고리로 전달
                         Text("다음")
                             .foregroundStyle(Color.black)
                             .padding(.trailing, 20)
@@ -87,12 +87,12 @@ struct RecordView: View {
         }
     }
     
-    // 데이터 함수
-    func formattedDate(date: Date) -> String {
-        let formatter = DateFormatter()
-        formatter.dateFormat = "yyyy / MM / dd HH:mm"
-        return formatter.string(from: date)
-    }
+//    // 데이터 함수
+//    func formattedDate(date: Date) -> String {
+//        let formatter = DateFormatter()
+//        formatter.dateFormat = "yyyy / MM / dd HH:mm"
+//        return formatter.string(from: date)
+//    }
 
 }
     

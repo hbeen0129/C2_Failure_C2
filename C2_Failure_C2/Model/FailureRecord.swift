@@ -21,13 +21,15 @@ class FailureRecord {
     var category: String
     var drink: String
     var quote: String
+    var author: String
     
-    init(date: Date, title: String, content: String, category: String, drink: String, quote: String) {
+    init(date: Date, title: String, content: String, category: String, drink: String, quote: String, author: String) {
         self.date = date
         self.title = title
         self.content = content
         self.category = category
         self.drink = drink
         self.quote = quote
+        self.author = author
     }
 }

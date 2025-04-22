@@ -9,7 +9,7 @@ import SwiftUI
 import SwiftData
 
 struct CategoryView: View {
-    @ObservedObject var tempFailure = TempFailure()
+    @ObservedObject var tempFailure: TempFailure // RecordView에서 내용 불러옴
     
     // 2열 그리드 설정
     // GridItem은 그리드의 행 혹은 열에 대한 디스크립션, flexible은 최소/최대값을 정해두고 뷰 크기에 따라 사이즈 조절 가능
@@ -100,6 +100,6 @@ struct CategoryView: View {
 }
 
 
-#Preview {
-    CategoryView()
-}
+//#Preview {
+//    CategoryView(tempFailure: TempFailure)
+//}

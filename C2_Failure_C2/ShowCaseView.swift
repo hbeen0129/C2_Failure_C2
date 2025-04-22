@@ -21,7 +21,7 @@ struct ShowCaseView: View {
             Text("나의 실패 조각 \n 쇼케이스")
                 .font(.system(size: 30, weight: .bold, design: .default))
                 .multilineTextAlignment(.center)
-                .padding(.top, 40)
+                .padding(.top, 20)
             
             Spacer()
             
@@ -40,15 +40,14 @@ struct ShowCaseView: View {
                                     Image(imageName(for: failureRecord.category))
                                         .resizable()
                                         .scaledToFit()
-                                        .frame(width: 150, height: 150)
-                                        .clipShape(Circle())
+                                        .frame(width: 100, height: 100)
                                     
                                     Text(failureRecord.title)
                                         .font(.caption)
                                         .foregroundStyle(Color.black)
                                         .multilineTextAlignment(.center)
                                 }
-                                .frame(width: 90) // 한 개당 고정 너비
+                                .frame(width: 50) // 한 개당 고정 너비
                             }
                             
                         }
@@ -59,36 +58,33 @@ struct ShowCaseView: View {
                     .frame(height: 130) // 전체 높이 제한
                 }
                 .frame(width: 340, height: 150)
-                .offset(y: 80) // 쇼케이스 이미지 위에 잘 보이도록 위치 조정
+                .offset(y: 150) // 쇼케이스 이미지 위에 잘 보이도록 위치 조정
                 
             }
-            
             Spacer()
+            
+            // 조각 모으기 페이지로 넘어가기
+            NavigationLink(destination: RecordView()) {
+                ZStack {
+                    Rectangle()
+                        .fill(Color.babyPink)
+                        .frame(maxWidth: .infinity, maxHeight: 60)
+                        .cornerRadius(20)
+                    
+                    Text("조각 모으기")
+                        .font(.headline)
+                        .foregroundStyle(Color.black)
+                }
+            }
             
             
         }
         .safeAreaPadding(.vertical, 20)
         .safeAreaPadding(.horizontal, 20)
-//        .onAppear {
-//            if failureRecords.isEmpty {
-//                let dummy = FailureRecord(
-//                    date: Date(),
-//                    title: "시험 망함",
-//                    content: "공부 안 함",
-//                    category: "학업",
-//                    drink: "아메리카노",
-//                    quote: "실패는 또 다른 시작이다"
-//                )
-//                context.insert(dummy)
-//                try? context.save()
-//                print("🌟 더미 데이터 저장 완료")
-//            } else {
-//                print("✅ 불러온 기록 수: \(failureRecords.count)")
-//            }
-//        }
+
     }
     
-    // 파일 상단에 추가 (import 밑 아무 곳)
+    // 카테고리 이미지 나오게 호출
     func imageName(for category: String) -> String {
         switch category {
         case "일": return "WorkCake"
@@ -104,5 +100,6 @@ struct ShowCaseView: View {
 
 #Preview {
     ShowCaseView()
+    
 }
 
