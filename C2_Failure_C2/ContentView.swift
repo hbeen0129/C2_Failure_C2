@@ -9,6 +9,7 @@ import SwiftUI
 import SwiftData
 
 // 버튼 두개 덩어리
+//TODO: top, bottom보다는 shoucase, piece
 enum ButtonType: String, CaseIterable {
     case top = "쇼케이스 보기"
     case bottom = "조각 모으기"

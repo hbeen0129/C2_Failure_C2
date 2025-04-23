@@ -15,16 +15,12 @@ struct ShowCaseView: View {
     
     
     
+    
     var body: some View {
         let reversedRecords = Array(failureRecords.reversed())
         
         // 전체 세로 정렬
         VStack {
-//            .toolbar {
-//                            ToolbarItem(placement: .navigationBarTrailing) {
-//                            }
-//
-//            }
             Text("나의 실패 조각 \n 쇼케이스")
                 .font(.system(size: 30, weight: .bold, design: .default))
                 .multilineTextAlignment(.center)
@@ -140,8 +136,8 @@ struct ShowCaseView: View {
     }
 }
 
-//    #Preview {
-//        ShowCaseView()
-//
-//    }
-//
+    #Preview {
+        ShowCaseView()
+
+    }
+
