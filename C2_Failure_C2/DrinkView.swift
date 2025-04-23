@@ -11,13 +11,10 @@ import SwiftData
 struct DrinkView: View {
     @ObservedObject var tempFailure: TempFailure
     
-    // 메인 뷰로 돌아가기 위한 dismiss
-    @Environment(\.dismiss) var dismiss
-    
     @Environment(\.modelContext) private var context
     
 //    // 화면 전환 제어
-//    @State private var navigationToShowCase = false
+    @State private var navigationToShowCase = false
     
     // 저장 알림
     @State private var showSaveAlert: Bool = false
@@ -74,7 +71,6 @@ struct DrinkView: View {
             
             // 쇼케이스 담기 버튼
             Button {
-                dismiss()
                 
                 let newFailure = FailureRecord(
                     date: tempFailure.date,
@@ -98,7 +94,7 @@ struct DrinkView: View {
                 }
                 
                 // 저장 후 화면 전환
-//                navigationToShowCase = true
+                navigationToShowCase = true
                 
                 
             } label: {
@@ -117,23 +113,23 @@ struct DrinkView: View {
         .safeAreaPadding(.horizontal, 20)
         
 //         NavigationLink를 여기서 사용하여 화면 전환을 처리
-//        NavigationLink(destination: ShowCaseView().navigationBarBackButtonHidden(true), isActive: $navigationToShowCase) {
-//            EmptyView()
-//        } .hidden()
+        NavigationLink(destination: ShowCaseView().navigationBarBackButtonHidden(true), isActive: $navigationToShowCase) {
+            EmptyView()
+        } .hidden()
         
         // 저장 완료 알림
             .alert("쇼케이스에 담았습니다!", isPresented: $showSaveAlert) {
                 Button("확인") {
-//                    navigationToShowCase = true // 알림 확인 누르면 화면 전환
-                    dismiss()
+                    navigationToShowCase = true // 알림 확인 누르면 화면 전환
+            
                 }
             }
         
         
 //        // ShowCaseView로 화면 전환
-//        if navigationToShowCase {
-//            ShowCaseView() // 쇼케이스 뷰로 전환
-//        }
+        if navigationToShowCase {
+            ShowCaseView() // 쇼케이스 뷰로 전환
+        }
     }
     
 }
